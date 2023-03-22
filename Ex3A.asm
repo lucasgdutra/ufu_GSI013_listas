@@ -9,7 +9,14 @@
 
 # a) A[16] = B[4] – f
 
-lw $t0,144($s1) #b
-lw $t1,256($s2) #f
-sub $t2,$t0,$t1 #subtra��o
-sw $t2,96($s0) #guarda em a
+la $s0,32($sp) #guarda no registrador endereço de A
+la $s1,128($sp) #guarda no registrador endereço de B
+la $s2,256($sp) #guarda no registrador endereço de f
+
+lw $t0, 64($s0) #guarda no registrador valor de A[16]
+lw $t1, 16($s1) #guarda no registrador valor de B[4]
+lw $t2, 0($s2) #guarda no registrador valor de f
+
+sub $t0,$t1,$t2 #guarda em $t0 o resultado de B[4] – f
+
+sw $t0, 64($s0)# armazena resultado em A[16]
