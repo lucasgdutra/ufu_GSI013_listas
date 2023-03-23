@@ -9,9 +9,16 @@
 
 # b) B[8] = A[14] + B[12] + h
 
-lw $t0,88($s1)
-lw $t1,176($s2)
-lw $t2,0($s3)
-add $t3,$t0,$t1
-add $t3,$t2,$t3
-sw $t3,160($s0)
+la $s0,32($sp) #guarda no registrador endereço de A
+la $s1,128($sp) #guarda no registrador endereço de B
+la $s2,256($sp) #guarda no registrador endereço de f
+
+lw $t0, 32($s0) #guarda no registrador valor de B[8]
+lw $t1, 56($s1) #guarda no registrador valor de A[14]
+lw $t2, 48($s1) #guarda no registrador valor de B[12]
+lw $t3, 0($s2) #guarda no registrador valor de f, como não foi informado endereço de h, foi utilizado f no lugar
+
+add $t4,$t1,$t2  #guarda em $t0 o resultado de A[14] + B[12]
+add $t0,$t3,$t4 #guarda em $t0 o resultado de $t4+ f
+
+sw $t0, 32($s0)# armazena resultado em B[8]

@@ -23,3 +23,5 @@ add $t0,$s0,$s1 # soma $s0 com $s1 e guarda em $t0
 add $t1,$s2,$s3 # soma $s2 com $s3 e guarda em $t1
 sub $t2,$t1,$s4 # subtrai $s4 de $t1 e guarda em $t2
 sub $s5,$t0,$t2 # subtrai $t2 de $t0 e guarda em $s5
+
+sw $s5,52($sp) # guarda na memória resultado da operacao

@@ -21,3 +21,5 @@ lw $s5,52($sp) # guarda no registrador $s5 o valor registrado em memória no end
 add $t0,$s2,$s3 # soma $s2 com $s3 e guarda em $t0
 sub $t1,$s0,$s1 # subtrai $s1 de $s0 e guarda em $t1
 add $s5,$t0,$t1 # soma $t0 com $t1 e guarda em $s5
+
+sw $s5,52($sp) # guarda na memória resultado da operacao

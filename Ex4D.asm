@@ -7,6 +7,12 @@
 #4) Considere que vetor V esteja associado ao registrador base $s6, e as variáveis a, b, c, d estejam associadas aos
 #registradores $s0, $s1, $s2, $s3. Converta a instrução em linguagem C para MIPS.
 
+#V=$s6
+#a=$s0
+#b=$s1
+#c=$s2
+#d=$s3s
+
 # d)
 # if( V[8] <= 12) {
 # a = a + b + c;
@@ -16,14 +22,15 @@
 # V[8] = V[8] + a;}
 
 lw $t1,32($s6) # V[8]
-bgt $t1,12 Else #compara se $t1 é maior 12
+li $t2 12 # armazena constante 12 em registrador
+bgt $t1,$t2 Else #compara se $t1 é maior 12
 add $s0,$s0,$s1
 add $s0,$s0,$s2
-add $t1,$t1,$s0
+move $t1,$s0
 sw $t1,32($s6) #retorna v[8] para $s6
 j Exit
 Else: sub $s0,$s0,$s1
 sub $s0,$s0,$s2
-add $t1,$t1,$s0
+move $t1,$s0
 sw $t1,32($s6) #retorna v[8] para $s6
-Exit
+Exit:
