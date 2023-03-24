@@ -33,7 +33,7 @@ add $t1,$s2,$s3 # soma $s2 com $s3 e guarda em $t1
 sub $t2,$t1,$s4 # subtrai $s4 de $t1 e guarda em $t2
 sub $s5,$t0,$t2 # subtrai $t2 de $t0 e guarda em $s5
 ```
-
+<div style="page-break-after: always;"></div>
 ## 2) Considere que as variáveis a, b, c, d, e, f não estejam associadas a nenhum dos registradores. Utilizando as operações load e store para realizar a movimentação de dados. Considere também que as variáveis são do tipo inteiro e estão armazenadas sequencialmente na memória a partir do endereço 32.
 
 ### Escreva os seguintes códigos em assembly do MIPS.
@@ -75,7 +75,7 @@ sub $s5,$t0,$t2 # subtrai $t2 de $t0 e guarda em $s5
 
 sw $s5,52($sp) # guarda na memória resultado da operacao
 ```
-
+<div style="page-break-after: always;"></div>
 ## 3) Considere dois vetores A e B de inteiros, com endereço de base 32 e 128 respectivamente. A variável f está na posição 256.
 ### Escreva os seguintes códigos em assembly do MIPS.
 
@@ -111,7 +111,7 @@ add $t0,$t3,$t4 #guarda em $t0 o resultado de $t4+ f
 
 sw $t0, 32($s0)# armazena resultado em B[8]
 ```
-
+<div style="page-break-after: always;"></div>
 ## 4) Considere que vetor V esteja associado ao registrador base $s6, e as variáveis a, b, c, d estejam associadas aos registradores $s0, $s1, $s2, $s3.
 
 ### Converta a instrução em linguagem C para MIPS.
@@ -253,7 +253,7 @@ move $t1,$s0
 sw $t1,32($s6) #retorna v[8] para $s6
 Exit:
 ```
-
+<div style="page-break-after: always;"></div>
 ## 5) Considere que vetor V esteja associado ao registrador base $s6.
 ### Converta a instrução em linguagem C para MIPS.
 
@@ -293,7 +293,7 @@ loop:
     j loop                # repete o loop
 exit:
 ```
-
+<div style="page-break-after: always;"></div>
 ## 6) Qual o código em assembly do MIPS para cada uma das seguintes funções C?
 
 a)
@@ -372,7 +372,7 @@ retorno:
     addi $sp, $sp, 12       # ajusta o ponteiro da pilha
     jr $ra                  # retorna o chamador
 ```
-
+<div style="page-break-after: always;"></div>
 ## 7) Complete a tabela para as seguintes instruções MIPS. Quando um campo não existir no formato de instrução utilize na (não se aplica). Para coluna categoria use A – Aritmética, T – Transferência de dados, L – Lógica, DC – Desvio condicional e D – Desvio.
 
 ### Na sequencia explique como funciona cada uma das instruções:
