@@ -4,11 +4,9 @@
 - Lucas Gabriel Dutra de Souza - 12121BSI226
 - Thiago Flauzino Oliveira Dutra - 12011BSI287
 
-7. Complete a tabela para as seguintes instruções MIPS.
-Quando um campo não existir no formato de instrução utilize na (não se aplica).
-Para coluna categoria use A – Aritmética, T – Transferência de dados, L – Lógica, DC – Desvio condicional e D – Desvio.
+# 7. Complete a tabela para as seguintes instruções MIPS. Quando um campo não existir no formato de instrução utilize na (não se aplica). Para coluna categoria use A – Aritmética, T – Transferência de dados, L – Lógica, DC – Desvio condicional e D – Desvio.
 
-Na sequencia explique como funciona cada uma das instruções:
+## Na sequencia explique como funciona cada uma das instruções:
 Exemplo:
 ```mips
 add $s1, $s2, $s3 #Soma o conteúdo dos registradores $s2 e $s3 e armazena no registrador $s1.
