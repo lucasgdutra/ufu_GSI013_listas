@@ -17,7 +17,7 @@ f=$s5
 
 a) `f = (a – b) + (c + d)`
 
-```mips
+```asm
 $s5 = ($s0 - $s1) + ($s2 + $s3)
 add $t0,$s2,$s3 # soma $s2 com $s3 e guarda em $t0
 sub $t1,$s0,$s1 # subtrai $s1 de $s0 e guarda em $t1
@@ -26,7 +26,7 @@ add $s5,$t0,$t1 # soma $t0 com $t1 e guarda em $s5
 
 b) `f = (a + b) – (c + d - e)`
 
-```mips
+```asm
 # $s5 = ($s0 + $s1) – ($s2 + $s3 - $s4)
 add $t0,$s0,$s1 # soma $s0 com $s1 e guarda em $t0
 add $t1,$s2,$s3 # soma $s2 com $s3 e guarda em $t1
