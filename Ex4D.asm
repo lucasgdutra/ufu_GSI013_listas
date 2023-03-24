@@ -22,7 +22,7 @@
 # V[8] = V[8] + a;}
 
 lw $t1,32($s6) # V[8]
-li $t2 12 # armazena constante 12 em registrador
+li $t2, 12 # armazena constante 12 em registrador
 bgt $t1,$t2 Else #compara se $t1 é maior 12
 add $s0,$s0,$s1
 add $s0,$s0,$s2
