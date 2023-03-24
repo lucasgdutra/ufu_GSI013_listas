@@ -17,7 +17,7 @@ f=$s5
 
 a) `f = (a – b) + (c + d)`
 
-```asm
+```mips
 $s5 = ($s0 - $s1) + ($s2 + $s3)
 add $t0,$s2,$s3 # soma $s2 com $s3 e guarda em $t0
 sub $t1,$s0,$s1 # subtrai $s1 de $s0 e guarda em $t1
@@ -26,7 +26,7 @@ add $s5,$t0,$t1 # soma $t0 com $t1 e guarda em $s5
 
 b) `f = (a + b) – (c + d - e)`
 
-```asm
+```mips
 # $s5 = ($s0 + $s1) – ($s2 + $s3 - $s4)
 add $t0,$s0,$s1 # soma $s0 com $s1 e guarda em $t0
 add $t1,$s2,$s3 # soma $s2 com $s3 e guarda em $t1
@@ -40,7 +40,7 @@ sub $s5,$t0,$t2 # subtrai $t2 de $t0 e guarda em $s5
 
 a) `f = (a – b) + (c + d)`
 
-```asm
+```mips
 lw $s0,32($sp) # guarda no registrador $s0 o valor registrado em memória no endereço 32, correspondente a letra a
 lw $s1,36($sp) # guarda no registrador $s1 o valor registrado em memória no endereço 36, correspondente a letra b
 lw $s2,40($sp) # guarda no registrador $s2 o valor registrado em memória no endereço 40, correspondente a letra c
@@ -58,7 +58,7 @@ sw $s5,52($sp) # guarda na memória resultado da operacao
 
 b) `f = (a + b) – (c + d – e)`
 
-```asm
+```mips
 lw $s0,32($sp) # guarda no registrador $s0 o valor registrado em memória no endereço 32, correspondente a letra a
 lw $s1,36($sp) # guarda no registrador $s1 o valor registrado em memória no endereço 36, correspondente a letra b
 lw $s2,40($sp) # guarda no registrador $s2 o valor registrado em memória no endereço 40, correspondente a letra c
@@ -80,7 +80,7 @@ sw $s5,52($sp) # guarda na memória resultado da operacao
 ### Escreva os seguintes códigos em assembly do MIPS.
 
 a) `A[16] = B[4] – f`
-```asm
+```mips
 la $s0,32($sp) #guarda no registrador endereço de A
 la $s1,128($sp) #guarda no registrador endereço de B
 la $s2,256($sp) #guarda no registrador endereço de f
@@ -96,7 +96,7 @@ sw $t0, 64($s0)# armazena resultado em A[16]
 
 b) `B[8] = A[14] + B[12] + h`
 
-```asm
+```mips
 la $s0,32($sp) #guarda no registrador endereço de A
 la $s1,128($sp) #guarda no registrador endereço de B
 la $s2,256($sp) #guarda no registrador endereço de f
@@ -130,7 +130,7 @@ if( a == b)
 else
     a = b – c;
 ```
-```asm
+```mips
 # a)
 # if( $s0 == $s1)
 # $s0 = $s1 + $s2;
@@ -152,7 +152,7 @@ if( a != b)
 else
     a = b – c;
 ```
-```asm
+```mips
 beq $s0,$s1, Else
 add $s0,$s1,$s2
 j Exit
@@ -168,7 +168,7 @@ else
     a = b – c;
 ```
 
-```asm
+```mips
 bge $s0,$s1, Else #é necessário usar o comando 'bge' de maior ou igual, 'bgt' não considera casos de igualdade
 add $s0,$s1,$s2
 j Exit
@@ -186,7 +186,7 @@ if( V[8] <= 12) {
     V[8] = V[8] + a;
 }
 ```
-```asm
+```mips
 lw $t1,32($s6) # V[8]
 li $t2, 12 # armazena constante 12 em registrador
 bgt $t1,$t2 Else #compara se $t1 é maior 12
@@ -212,7 +212,7 @@ if( V[8] > b) {
     V[8] = V[8] + a;
 }
 ```
-```asm
+```mips
 lw $t1,32($s6) # V[8]
 li $t2 12 # armazena constante 12 em registrador
 ble $t1,$t2 Else #compara se $t1 é menor ou igual 12
@@ -238,7 +238,7 @@ if( V[8] >= 12) {
     V[8] = V[8] + a;
 }
 ```
-```asm
+```mips
 lw $t1,32($s6) # V[8]
 li $t2 12 # armazena constante 12 em registrador
 blt $t1,$t2 Else #compara se $t1 é menor que 12
@@ -265,7 +265,7 @@ while (b < 32) {
     b = b + 1;
 }
 ```
-```asm
+```mips
 loop:
     slt $t0, $s1, 32      # if (b < 32)
     beq $t0, $zero, exit  # exit loop
@@ -283,7 +283,7 @@ b)
 while( V[0] <= a )
     V[0] = V[0] + b;
 ```
-```asm
+```mips
 loop:
     lw $t0, ($s6)         # t0 = V[0]
     slt $t1, $t0, $s0     # if (V[0] <= a)
@@ -307,7 +307,7 @@ int busca(int x, int n, int v[]) {
 }
 ```
 
-```asm
+```mips
 busca_r:
     addi $sp, $sp, -12      # ajusta o ponteiro de pilha
     sw $ra, 8($sp)          # salva o endereço de retorno
@@ -345,7 +345,7 @@ int busca_r(int x, int n, int v[]) {
     return busca_r(x, n-1, v);
 }
 ```
-```asm
+```mips
 busca_r:
     addi $sp, $sp, -12      # ajusta o ponteiro de pilha
     sw $ra, 8($sp)          # salva o endereço de retorno
@@ -377,7 +377,7 @@ retorno:
 
 ### Na sequencia explique como funciona cada uma das instruções:
 Exemplo:
-```asm
+```mips
 add $s1, $s2, $s3 #Soma o conteúdo dos registradores $s2 e $s3 e armazena no registrador $s1.
 ```
 
@@ -404,7 +404,7 @@ add $s1, $s2, $s3 #Soma o conteúdo dos registradores $s2 e $s3 e armazena no re
 | `jr $ra`             	| D         	| R       	|  0 	| $ra  	| 0  	| 0  	| 0      	|  8    	| n.a.     	|
 | `jal L`              	| D         	| J       	|  3 	| n.a  	| n.a  	| n.a  	| n.a      	| n.a   	| L      	|
 
-```asm
+```mips
 add $s1, $s2, $s3 #Soma o conteúdo dos registradores $s2 e $s3 e armazena no registrador $s1.
 sub $s1, $s2, $s3 #
 addi $s1, $s2, 10 #
