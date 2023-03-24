@@ -20,7 +20,7 @@
 # a = b – c;
 
 
-bgt $s0,$s1, Else
+bge $s0,$s1, Else #é necessário usar o comando 'bge' de maior ou igual, 'bgt' não considera casos de igualdade
 add $s0,$s1,$s2
 j Exit
 Else: sub $s0,$s1,$s2
