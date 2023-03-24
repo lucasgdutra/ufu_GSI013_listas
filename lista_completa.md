@@ -4,8 +4,8 @@
 - Lucas Gabriel Dutra de Souza - 12121BSI226
 - Thiago Flauzino Oliveira Dutra - 12011BSI287
 
-# 1) Considere que as variáveis a, b, c, d, e, f são associadas aos registradores $s0, $s1, $s2, $s3, $s4, $s5.
-## Escreva os seguintes códigos em assembly do MIPS.
+## 1) Considere que as variáveis a, b, c, d, e, f são associadas aos registradores $s0, $s1, $s2, $s3, $s4, $s5.
+### Escreva os seguintes códigos em assembly do MIPS.
 
 >a=$s0
 b=$s1
@@ -34,9 +34,9 @@ sub $t2,$t1,$s4 # subtrai $s4 de $t1 e guarda em $t2
 sub $s5,$t0,$t2 # subtrai $t2 de $t0 e guarda em $s5
 ```
 
-# 2) Considere que as variáveis a, b, c, d, e, f não estejam associadas a nenhum dos registradores. Utilizando as operações load e store para realizar a movimentação de dados. Considere também que as variáveis são do tipo inteiro e estão armazenadas sequencialmente na memória a partir do endereço 32.
+## 2) Considere que as variáveis a, b, c, d, e, f não estejam associadas a nenhum dos registradores. Utilizando as operações load e store para realizar a movimentação de dados. Considere também que as variáveis são do tipo inteiro e estão armazenadas sequencialmente na memória a partir do endereço 32.
 
-## Escreva os seguintes códigos em assembly do MIPS.
+### Escreva os seguintes códigos em assembly do MIPS.
 
 a) `f = (a – b) + (c + d)`
 
@@ -76,8 +76,8 @@ sub $s5,$t0,$t2 # subtrai $t2 de $t0 e guarda em $s5
 sw $s5,52($sp) # guarda na memória resultado da operacao
 ```
 
-# 3) Considere dois vetores A e B de inteiros, com endereço de base 32 e 128 respectivamente. A variável f está na posição 256.
-## Escreva os seguintes códigos em assembly do MIPS.
+## 3) Considere dois vetores A e B de inteiros, com endereço de base 32 e 128 respectivamente. A variável f está na posição 256.
+### Escreva os seguintes códigos em assembly do MIPS.
 
 a) `A[16] = B[4] – f`
 ```asm
@@ -112,9 +112,9 @@ add $t0,$t3,$t4 #guarda em $t0 o resultado de $t4+ f
 sw $t0, 32($s0)# armazena resultado em B[8]
 ```
 
-# 4) Considere que vetor V esteja associado ao registrador base $s6, e as variáveis a, b, c, d estejam associadas aos registradores $s0, $s1, $s2, $s3.
+## 4) Considere que vetor V esteja associado ao registrador base $s6, e as variáveis a, b, c, d estejam associadas aos registradores $s0, $s1, $s2, $s3.
 
-## Converta a instrução em linguagem C para MIPS.
+### Converta a instrução em linguagem C para MIPS.
 
 >V=$s6
 a=$s0
@@ -254,8 +254,8 @@ sw $t1,32($s6) #retorna v[8] para $s6
 Exit:
 ```
 
-# 5) Considere que vetor V esteja associado ao registrador base $s6.
-## Converta a instrução em linguagem C para MIPS.
+## 5) Considere que vetor V esteja associado ao registrador base $s6.
+### Converta a instrução em linguagem C para MIPS.
 
 a)
 ```c
@@ -294,7 +294,7 @@ loop:
 exit:
 ```
 
-# 6) Qual o código em assembly do MIPS para cada uma das seguintes funções C?
+## 6) Qual o código em assembly do MIPS para cada uma das seguintes funções C?
 
 a)
 ```c
@@ -373,9 +373,9 @@ retorno:
     jr $ra                  # retorna o chamador
 ```
 
-# 7. Complete a tabela para as seguintes instruções MIPS. Quando um campo não existir no formato de instrução utilize na (não se aplica). Para coluna categoria use A – Aritmética, T – Transferência de dados, L – Lógica, DC – Desvio condicional e D – Desvio.
+## 7) Complete a tabela para as seguintes instruções MIPS. Quando um campo não existir no formato de instrução utilize na (não se aplica). Para coluna categoria use A – Aritmética, T – Transferência de dados, L – Lógica, DC – Desvio condicional e D – Desvio.
 
-## Na sequencia explique como funciona cada uma das instruções:
+### Na sequencia explique como funciona cada uma das instruções:
 Exemplo:
 ```asm
 add $s1, $s2, $s3 #Soma o conteúdo dos registradores $s2 e $s3 e armazena no registrador $s1.
