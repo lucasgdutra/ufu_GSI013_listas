@@ -412,22 +412,19 @@ add $s1, $s2, $s3 #Soma o conteúdo dos registradores $s2 e $s3 e armazena no re
 
 ```mips
 add $s1, $s2, $s3 #Soma o conteúdo dos registradores $s2 e $s3 e armazena no registrador $s1.
-sub $s1, $s2, $s3 #
-addi $s1, $s2, 10 #
-lw $s1, 100($s2) #
-sw $s1, 100($s2) #
-and $s1, $s2, $s3 #
-or $s1, $s2, $s3 #
-nor $s1, $s2, $s3 #
-andi $s1, $s2, 10 #
-ori $s1, $s2, 10 #
-sll $s1, $s2, 10 #
-srl $s1, $s2, 10 #
-beq $s1, $s2, L #
-bnq $s1, $s2, L #
-slt $s1, $s2, $s3 #
-slti $s1, $s2, 10 #
-j L #
-jr $ra #
-jal L #
+sub $s1, $s2, $s3 # Subtrai o conteúdo do registrador $s3 do registrador $s2 e armazena o resultado no registrador $s1.
+addi $s1, $s2, 10 # Adiciona o valor imediato 10 ao conteúdo do registrador $s2 e armazena em $s1.
+lw $s1, 100($s2)  #Carrega o valor armazenado na memória no endereço representado pela soma do conteúdo do registrador $s2 com o valor imediato 100 e armazena o resultado no registrador $s1.
+sw $s1, 100($s2) #Armazena o conteúdo do registrador $s1 na memória no endereço representado pela soma do conteúdo do registrador $s2 com o valor imediato 100.
+and $s1, $s2, $s3  #Realiza uma operação lógica AND entre conteúdos dos registradores $s2 e $s3 e armazena o resultado no registrador $s1.
+or $s1, $s2, $s3 #: Realiza uma operação lógica OR entre os conteúdos dos registradores $s2 e $s3 e armazena o resultado no registrador $s1.
+nor $s1, $s2, $s3 # Realiza uma operação lógica NOR entre os conteúdos dos registradores $s2 e $s3 e armazena o resultado no registrador $s1.
+andi $s1, $s2, 10 # Realiza uma operação lógica AND entre o conteúdo do registrador $s2 e o valor imediato 10 e armazena o resultado no registrador $s1.
+ori $s1, $s2, 10 # Realiza uma operação lógica OR entre o conteúdo do registrador $s2 e o valor imediato 10 e armazena o resultado no registrador $s1.
+sll $s1, $s2, 10 # Desloca o conteúdo do registrador $s2 em 10 bits para a esquerda e armazena o resultado no registrador $s1.
+srl $s1, $s2, 10 # Desloca o conteúdo do registrador $s2 em 10 bits para a direita e armazena o resultado no registrador $s1.
+beq $s1, $s2, L # Desvia para o endereço indicado por L se o conteúdo dos registradores $s1 e $s2 forem iguais.
+bnq $s1, $s2, L # Desvia para o endereço indicado por L se o conteúdo dos registradores $s1 e $s2 forem diferentes.
+slt $s1, $s2, $s3 # Compara o conteúdo dos registradores $s2 e $s3, e se $s2 for menor que $s3, armazena 1 no registrador
+slti $s1, $s2, 10 # Compara o conteúdo do registrador $s2 com o valor imediato 10 e, se $s2 for menor que 10, armazena 1 no registrador $s1. Caso contrário, armazena 0.
 ```
