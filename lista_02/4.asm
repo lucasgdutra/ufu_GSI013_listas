@@ -11,6 +11,7 @@ result: .asciiz "O resultado da equação é: "
 newline: .asciiz "\n"
 prompt4: .asciiz "Deseja realizar um novo cálculo? (sim/nao): "
 
+
 .text
 .globl main
 
@@ -85,4 +86,7 @@ li $v0, 12
 syscall
 move $s3, $v0
 beq $s3, 115, loop # se o usuário digitar 'sim', volta ao início do loop
-beq $s3, 110, exit # se o usuário digitar 'nao', sair do programa
+beq $s3, 110, exit # se o usuário digitar 'nao', sai do programa
+
+exit:
+li $v0, 10
